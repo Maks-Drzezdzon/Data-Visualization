@@ -48,7 +48,7 @@ ggplot(data = mpg) +  geom_point(mapping = aes(x = displ, y = hwy), color = 'blu
 unique(ggplot2::mpg$displ)
 # pass in formula to facet_warp()
 # each reading and class gets its own graph plot
-ggplot(data = mpg) +  geom_point(mapping = aes(x = displ, y = hwy)) +  facet_wrap(~ class, nrow = 2)
+ggplot(data = mpg) +  geom_point(mapping = aes(x = displ, y = hwy)) +  facet_wrap(~class, nrow = 2)
 
 
 ggplot(data = mpg) +  geom_point(mapping = aes(x = drv, y = cyl))
@@ -62,3 +62,9 @@ ggplot(data = mpg) +
   facet_grid(. ~ cyl)
 
 ggplot(data = diamonds) +  stat_count(mapping = aes(x = cut))
+
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy))
+
+filter(mpg, cyl == 8)
+filter(diamonds, carat > 3)
